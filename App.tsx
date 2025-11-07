@@ -1,3 +1,5 @@
+
+
 import React, { useState, useCallback, ChangeEvent, useRef, useEffect } from 'react';
 import { editImage, parseDataUrl, generateImage, generateVideo } from './services/geminiService';
 
@@ -117,14 +119,14 @@ const ApiKeyModal: React.FC<{ onSelectKey: () => void; onClose: () => void; }> =
 );
 
 // Fix for TypeScript error: Subsequent property declarations must have the same type.
-type AIStudio = {
-    hasSelectedApiKey: () => Promise<boolean>;
-    openSelectKey: () => Promise<void>;
-};
-
+// By defining the type inline within the global declaration, we avoid potential
+// conflicts with other type declarations of the same name in the global scope.
 declare global {
     interface Window {
-        aistudio?: AIStudio;
+        aistudio?: {
+            hasSelectedApiKey: () => Promise<boolean>;
+            openSelectKey: () => Promise<void>;
+        };
     }
 }
 
@@ -339,7 +341,7 @@ export default function App() {
                 {showApiKeyModal && <ApiKeyModal onSelectKey={handleSelectApiKey} onClose={() => setShowApiKeyModal(false)} />}
                 <header className="text-center py-4 border-b border-gray-700 bg-gray-800/50 shadow-md">
                     <h1 className="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-500">
-                        Gemini AI Creative Suite
+                        AfridixSahil AI Creative suit
                     </h1>
                 </header>
 
