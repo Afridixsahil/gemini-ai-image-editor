@@ -1,0 +1,5 @@
+{
+  "name": "Gemini AI Image Editor",
+  "description": "A powerful, AI-driven image editor using Gemini. Perform complex edits like object removal, background replacement, and color restoration with simple text prompts.",
+  "requestFramePermissions": []
+}
