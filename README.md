@@ -52,3 +52,27 @@ Set the `GEMINI_API_KEY` environment variable before running the app.
 - Never share your API key publicly
 - API keys stored in localStorage are only accessible on your device
 - For production apps, consider implementing proper backend authentication
+
+- ## Desktop Application (Windows 64-bit Executable)
+
+Want to run this app as a standalone desktop application? Check out our comprehensive guide:
+
+📦 **[Desktop Build Guide](./DESKTOP_BUILD_GUIDE.md)** - Complete instructions for building a Windows 64-bit executable (.exe)
+
+The guide includes:
+- Step-by-step Electron setup
+- Building portable .exe files
+- Creating installers with NSIS
+- Troubleshooting common issues
+- CI/CD integration examples
+
+**Quick Start:**
+```bash
+# Install dependencies
+npm install --save-dev electron electron-builder
+
+# Build Windows 64-bit executable
+npm run electron:build:win
+```
+
+The executable will be available in the `release/` folder and can be distributed to users who want to run the app without a browser.
